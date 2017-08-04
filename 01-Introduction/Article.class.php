@@ -13,7 +13,8 @@ class Article
           $Accroche,
           $Description,
           $FeaturedImage,
-          $DateCreationArticle;
+          $DateCreationArticle,
+          $Auteur;
 
 /**
 *Afin de pouvoir attribuer une valeur a mes differentes variables,
@@ -71,6 +72,12 @@ class Article
           return $this->DateCreationArticle;
         }
 
+        public function getAuteur()
+        {
+          // return 'Mon Titre est : '.$this->Titre;
+          return $this->Auteur;
+        }
+
         /**
         * Setters : Function qui vont avoir la charge de modifier les proprièté
         * de notre classe.
@@ -81,18 +88,14 @@ class Article
           $this->Titre = $MonNouveauTitre;
         }
 
+        public function setAccroche($NouvelleAccroche)
+        {
+          $this->Accroche = $NouvelleAccroche;
+        }
+
+        public function setAuteur($Auteur)
+        {
+          $this->Auteur = $Auteur;
+        }
 
 } // Fin de ma Classe Article
-
-
-
-
-
-
-
-
-
-
-
-
- ?>
