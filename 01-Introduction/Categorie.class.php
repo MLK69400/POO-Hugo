@@ -1,42 +1,63 @@
 <?php
+class Categorie {
+    
+    private $Libelle;
+    private $CollectionArticles = [];
+    
+    public function __construct($Libelle) {
+        $this->Libelle = $Libelle;
+    }
+    
+    /**
+     * @return the $Libelle
+     */
+    public function getLibelle()
+    {
+        return $this->Libelle;
+    }
+    
+    /**
+     * @return the $CollectionArticles
+     */
+    public function getCollectionArticles() {
+        return $this->CollectionArticles;
+    }
 
+    /**
+     * @param field_type $Libelle
+     */
+    public function setLibelle($Libelle)
+    {
+        $this->Libelle = $Libelle;
+    }
+    
+    /**
+     * Permet d'ajouter un Objet Article à notre tableau (Collection) d'Articles
+     */
+    public function AjouterUnArticle(Article $Article) {
+        $this->CollectionArticles[] = $Article;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-class Categorie
-{
-
-  private $Libelle,
-          $CollectionArticles = [];
-
-
-  public function __construct($Libelle)
-          {
-
-            $this->Libelle=$Libelle;
-
-          } // Fin de mon constucteur
-
-        public function getLibelle()
-        {
-          return $this->Libelle;
-        }
-
-        public function getCollectionArticles()
-        {
-          return $this->CollectionArticles;
-        }
-
-        public function setLibelle($NouveauLibelle)
-        {
-          $this->Libelle = $NouveauLibelle;
-        }
-
-        /**
-         * Permet d'ajouter un objet Article a notre tableau (CollectionArticle)
-         */
-        public function AjouterArticle(Article $Article)
-        {
-          $this->CollectionArticles[] = $Article;
-        }
-
-
-} // Fin de ma Classe Article
+    
+    
+}

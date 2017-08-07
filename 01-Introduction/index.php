@@ -1,90 +1,107 @@
-
-    <meta charset="utf-8">
-
 <?php
 
-include '../includes/header.php';
 include 'Article.class.php';
-include 'Auteur.class.php';
 include 'Categorie.class.php';
-
+include 'Auteur.class.php';
 
 /**
-* Création d'une instance de la class "Article"
-* Ici, notre variable $UnArticle
-*/
+ * Création d'une instance de la Class "Article"
+ * Ici, notre variable $UnArticle est un Objet de la classe Article.
+ * En ce sens, elle a accès à l'ensemble des propriétés et fonctions qui la composent.
+ */
 
+$Auteur = new Auteur('LIEGEARD', 'Hugo', 'wf3@hl-media.fr');
 
-$UnArticle = new Article("La formation WF3", "Une formation Certifiante en 3 mois !","Rejoingnez-nous", "WF3.jpg", "04/08/2017");
-$Auteur = new Auteur("Kermiche", "Mohamed", "mohamedkermiche@hotmail.fr");
-$Categorie = new Categorie("Action");
+$UnArticle = new Article("La Formation WF3", "Une Formation Certifiante en 3 mois !", "Rejoignez-nous à Limas et vous verrez bien !", "wf3.jpg", "04/08/2017");
 
-// -- Affichage de l'Objet Article
-echo"<pre style='color:red;'>";
+$UnArticle->setAuteur($Auteur);
+
+// -- Afficher l'Objet Article
+echo '<pre>';
 print_r($UnArticle);
-print_r($Auteur);
 echo '</pre>';
 
+// -- 
 
+$UnDeuxiemeArticle = new Article("SUPINFO", "Une Ecole pour les Ingénieurs !", "Venez nombweu pouw prendre le Ti-Punch...", "ti-punch.jpg", "04/08/2017");
 
+$UnDeuxiemeArticle->setAuteur($Auteur);
 
-$UnDexiemeArticle = new Article("La martinique", "Une île pour les vacances !","Venez nombreux", "Image.jpg", "04/08/2017");
-$Auteur2 = new Auteur("Biloute", "Lili", "mohiche@hotmail.fr");
-$Categorie2 = new Categorie("Comedie");
-
-// -- Affichage de l'Objet Article
-echo"<pre style='color:green;'>";
-print_r($UnDexiemeArticle);
-print_r($Auteur2);
+// -- Afficher l'Objet Article
+echo '<pre>';
+print_r($UnDeuxiemeArticle);
 echo '</pre>';
 
+// -- Je veux afficher le Titre de mon Premier Article
+#echo $UnArticle->Titre;
+# : Uncaught Error: Cannot access private property Article::$Titre
 
-// -- Je veux afficher le Titre de mon premier Article
-
- // echo $UnArticle->Titre;
-
-
- echo $UnArticle->getTitre();echo '<br>';
- echo $UnArticle->getAccroche();echo '<br>';
- echo $UnArticle->getDescription();echo '<br>';
- echo $UnArticle->getFeaturedImage();echo '<br>';
- echo $UnArticle->getDateCreationArticle();
-
-
-// -- Ici je vais modifier le titre de mon Article
-$UnArticle->setTitre('La formation WebForce3');
+echo $UnArticle->getTitre();
+echo ' - ';
+echo $UnArticle->getAccroche();
 echo '<br>';
- echo $UnArticle->getTitre();
+echo $UnDeuxiemeArticle->getTitre();
+echo ' - ';
+echo $UnDeuxiemeArticle->getAccroche();
 
- $UnArticle->setAccroche('Accroche modifier');
- echo '<br>';
- echo $UnArticle->getAccroche();
+// -- Ici, je vais modifier le titre de mon article
+echo '<br><br>';
+$UnArticle->setTitre('La Formation WebForce3');
+echo $UnArticle->getTitre();
 
-
-  $Auteur->setNom('edghezgh');
-  echo '<br>';
-  echo $Auteur->getNom();
-
-  echo '<hr>';
-
-  $UneCategorie = new Categorie('Formation Informatique');
-  $UneCategorie->AjouterArticle($UnArticle);
-  $UneCategorie->AjouterArticle($UnDexiemeArticle);
-
-echo "<pre style='color:blue;'>";
-  print_r($UneCategorie);
+echo '<pre>';
+print_r($UnArticle);
 echo '</pre>';
 
+echo '<hr>';
+
+$UneCategorie = new Categorie('Formation Informatique');
+$UneCategorie->AjouterUnArticle($UnArticle);
+$UneCategorie->AjouterUnArticle($UnDeuxiemeArticle);
+#$UneCategorie->AjouterUnArticle("Titre de mon Article");
+
+echo '<pre>';
+print_r($UneCategorie);
+echo '</pre>';
 
 echo '<hr>';
 
 echo '<ol>';
-  echo '<li>';
-    echo $UneCategorie->getLibelle();
-  echo '</li>';
-  echo '<ul>';
-     $articles = $UneCategorie->getCollectionArticles();
-    foreach ($articles as $article);
-      echo "<li>".$article->getTitre() ."- ".$article->getAuteur()->getNomComplet()."</li>";
-  echo '</ul>';
+    echo '<li>';
+        echo $UneCategorie->getLibelle();
+    echo '</li>';
+    echo '<ul>';
+       $articles = $UneCategorie->getCollectionArticles();
+       foreach ($articles as $article) :
+         echo "<li>". $article->getTitre() ." - ". 
+            $article->getAuteur()->getNomComplet() ."</li>";
+       endforeach;
+    echo '</ul>';
 echo '</ol>';
+
+
+
+
+
+
+echo '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

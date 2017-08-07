@@ -1,101 +1,113 @@
 <?php
 
-
-/**
- *Création d'une classe Article
- *Une Classe est une entité regroupant des variables / propriètés
- *et des fonction
+/*--
+ * Création d'une Classe Article
+ * Une Classe est une entité regroupant des variables / propriétés 
+ * et des fonctions.
  */
-class Article
-{
-  // -- Déclaration des propriètés de notre Class "Article"
-  private $Titre,
-          $Accroche,
-          $Description,
-          $FeaturedImage,
-          $DateCreationArticle,
-          $Auteur;
 
-/**
-*Afin de pouvoir attribuer une valeur a mes differentes variables,
-*Je vais mettre en place un constructeur
-*/
-  public function __construct(
-            $Titre,
+class Article {
+    
+    // -- Déclaration des propriétés de notre Class "Article"
+    private $Titre,
             $Accroche,
             $Description,
             $FeaturedImage,
-            $DateCreationArticle)
-          {
-            // -- Ici nous allons attribuer a chaque proprièté de notre classe,
-            // -- la valeur qui a été passée au constructeur.
+            $DateCreationArticle,
+            $Auteur;
+    
+    /**
+     * Afin de pouvoir attribuer une valeur à mes différentes variables,
+     * Je vais mettre en place un constructeur
+     */
+    public function __construct(
+        $Titre,
+        $Accroche,
+        $Description,
+        $FeaturedImage,
+        $DateCreationArticle) {
+        
+        // -- Ici, nous allons attribuer à chaque propriété de notre classe,
+        // -- la valeur qui à été passée au constructeur.
+        
+        $this->Titre                = $Titre;
+        $this->Accroche             = $Accroche;
+        $this->Description          = $Description;
+        $this->FeaturedImage        = $FeaturedImage;
+        $this->DateCreationArticle  = $DateCreationArticle;
+        
+    } // Fin de mon Constructeur
+    
+    /**
+     * Getters : Fonctions qui vont avoir la charge de nous renvoyer nos informations.
+     * Nous aurons une fonction par propriété de notre classe. 
+     */
+    
+    public function getTitre() {
+        return $this->Titre;
+    }
+    
+    /**
+     * @return the $Accroche
+     */
+    public function getAccroche()
+    {
+        return $this->Accroche;
+    }
 
-            $this->Titre                =$Titre;
-            $this->Accroche             =$Accroche;
-            $this->Description          =$Description;
-            $this->FeaturedImage        =$FeaturedImage;
-            $this->DateCreationArticle  =$DateCreationArticle;
-          } // Fin de mon constucteur
+    /**
+     * @return the $Description
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
 
-          /**
-          * Getters : Function qui vont avoir la charge de nous renvoyer nos informations.
-          * Nous aurons une fonction par propriètés de notre classe.
-          */
+    /**
+     * @return the $FeaturedImage
+     */
+    public function getFeaturedImage()
+    {
+        return $this->FeaturedImage;
+    }
 
-        public function getTitre()
-        {
-          // return 'Mon Titre est : '.$this->Titre;
-          return $this->Titre;
-        }
+    /**
+     * @return the $DateCreationArticle
+     */
+    public function getDateCreationArticle()
+    {
+        return $this->DateCreationArticle;
+    }
 
-        public function getAccroche()
-        {
-          // return 'Mon Titre est : '.$this->Titre;
-          return $this->Accroche;
-        }
-
-        public function getDescription()
-        {
-          // return 'Mon Titre est : '.$this->Titre;
-          return $this->Description;
-        }
-
-        public function getFeaturedImage()
-        {
-          // return 'Mon Titre est : '.$this->Titre;
-          return $this->FeaturedImage;
-        }
-
-        public function getDateCreationArticle()
-        {
-          // return 'Mon Titre est : '.$this->Titre;
-          return $this->DateCreationArticle;
-        }
-
-        public function getAuteur()
-        {
-          // return 'Mon Titre est : '.$this->Titre;
-          return $this->Auteur;
-        }
-
-        /**
-        * Setters : Function qui vont avoir la charge de modifier les proprièté
-        * de notre classe.
-        */
-
-        public function setTitre($MonNouveauTitre)
-        {
-          $this->Titre = $MonNouveauTitre;
-        }
-
-        public function setAccroche($NouvelleAccroche)
-        {
-          $this->Accroche = $NouvelleAccroche;
-        }
-
-        public function setAuteur($Auteur)
-        {
-          $this->Auteur = $Auteur;
-        }
-
+    /**
+     * Setters : Fonctions qui vont avoir la charge de modifier les propriétés de notre
+     * Class.
+     */
+    
+    public function setTitre($MonNouveauTitre) {
+        $this->Titre = $MonNouveauTitre;
+    }
+    
+    public function setAuteur(Auteur $Auteur) {
+        $this->Auteur = $Auteur;
+    }
+    
+    public function getAuteur() {
+        return $this->Auteur;
+    }
+            
 } // Fin de ma Classe Article
+
+
+
+
+
+
+
+
+
+
+
+
+
+
