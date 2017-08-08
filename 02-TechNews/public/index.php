@@ -16,9 +16,5 @@ use Core\Core;
 # Initialisation du Site
 require 'bootstrap.inc.php';
 
-
-// require (HEADER_SITE);
-
-    $core = new Core($_GET);
-
-// require (FOOTER_SITE);
+# Front Contoller
+$core = new Core($_GET);

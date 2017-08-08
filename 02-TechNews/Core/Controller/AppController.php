@@ -8,8 +8,8 @@ class AppController {
 
 /**
  * Permet de générer l'affichage de la vue passée en paramètre.
- * @param String $view Vue à afficher
- * @param Array $viewparams données à passer à la vue
+ * @param $String $view Vue à afficher
+ * @param $Array $viewparams données à passer à la vue
  */
   protected function render($view, $viewparams = '') {
 
@@ -25,8 +25,15 @@ class AppController {
     //Affichage du Pied de page
     require(FOOTER_SITE);
   }
-  
+
   public function getParams() {
     return $this->_viewparams;
   }
+
+    public function debug() {
+      echo '<pre>';
+          print_r($this->_viewparams);
+      echo '</pre>';
+    }
+
 }

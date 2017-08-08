@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class Core {
+class Core  extends \Core\Controller\AppController {
 
   public function __construct($params){
 
@@ -28,15 +28,14 @@ class Core {
         // -- on execute l'action
         $obj->$action();
       }
-      else{ echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Aucune vue correspondante</h3>"; }
+      else{ //echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Aucune vue correspondante</h3>";
+      $this->render('errors/404',['erreur'=>'Aucune vue correspondante']);
+      }
 
     }else {
 
       echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Ce controleur n'existe pas </h3>";
     }
-
-
-    echo '<h1>Hello World</h1>';
 
   }
 }
