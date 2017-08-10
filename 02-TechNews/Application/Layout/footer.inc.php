@@ -7,7 +7,7 @@
                     <div class="col-md-4  col-sm-4 col-xs-12">
                         <div class="about">
                             <a href="#" class="logo">
-                                <img alt="" src="<?= PUBLIC_URL; ?> /images/logo_footer.png" />
+                                <img alt="" src="<?= PUBLIC_URL; ?>/images/logo_footer.png" />
                             </a>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                         </div>
@@ -15,25 +15,21 @@
                     <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
                         <h3>NOS CATEGORIES</h3>
                         <ul class="list-category">
-
-                          <?php foreach ($categories as $categorie) : ?>
-
-                          <li><a href="<?= $categorie->getROUTECATEGORIE(); ?>">
-                            <?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
-
-                          <?php endforeach; ?>
+                           	<?php foreach($categories as $categorie) : ?>
+			
+                				<li><a href="<?= $categorie->getROUTECATEGORIE(); ?>">
+                					<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+                				
+                			<?php endforeach; ?>
                         </ul>
                     </div>
                     <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
                         <h3>RECHERCHE PAR TAGS</h3>
 
                         <div class="list-tags">
-
-                          <?php foreach ($tags as $tag): ?>
-                            <a href="#"><?=$tag->getLIBELLETAGS(); ?></a>
-                          <?php endforeach; ?>
-
-
+                        	<?php foreach($tags as $tag) : ?>
+                           		<a href="#"><?= $tag->getLIBELLETAGS(); ?></a>
+							<?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -83,10 +79,10 @@
             </div>
         </footer>
     </div>
-    <!--scrip file-->
-    <script src="<?= PUBLIC_URL; ?> /js/jquery.min.js"></script>
-    <script src="<?= PUBLIC_URL; ?> /js/bootstrap.js"></script>
-    <script src="<?= PUBLIC_URL; ?> /js/owl.carousel.min.js"></script>
-    <script src="<?= PUBLIC_URL; ?> /js/main.js"></script>
+    <!--script file-->
+    <script src="<?= PUBLIC_URL; ?>/js/jquery.min.js"></script>
+    <script src="<?= PUBLIC_URL; ?>/js/bootstrap.js"></script>
+    <script src="<?= PUBLIC_URL; ?>/js/owl.carousel.min.js"></script>
+    <script src="<?= PUBLIC_URL; ?>/js/main.js"></script>
 </body>
 </html>

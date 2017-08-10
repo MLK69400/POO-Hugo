@@ -1,26 +1,30 @@
 <?php
-
 namespace Application\Model\Tags;
 
+class Tags
+{
+    
+    private $IDTAGS,
+            $LIBELLETAGS;
 
-class Tags {
+            
+    /**
+     * @return the $IDTAGS
+     */
+    public function getIDTAGS()
+    {
+        return $this->IDTAGS;
+    }
 
-  private $IDTAGS,
-          $LIBELLETAGS;
+    /**
+     * @return the $LIBELLETAGS
+     */
+    public function getLIBELLETAGS()
+    {
+        return $this->LIBELLETAGS;
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getIDTAGS()
-  {
-    return $this->IDTAGS;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getLIBELLETAGS()
-  {
-    return $this->LIBELLETAGS;
-  }
+    
+    
 }
+

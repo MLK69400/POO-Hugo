@@ -1,15 +1,16 @@
-
-
-
+<?php 
+    # Je récupère l'Action
+    $current = ucfirst($this->getAction());
+?>
 <!--menu mobile-->
 <nav class="menu-res hidden-lg hidden-md ">
 	<div class="menu-res-inner">
 		<ul>
-			<?php foreach ($categories as $categorie) : ?>
-
-			<li><a href="<?= $categorie->getROUTECATEGORIE(); ?>">
-				<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
-
+			<?php foreach($categories as $categorie) : ?>
+			
+				<li><a href="<?= PUBLIC_URL.'/'.$categorie->getROUTECATEGORIE(); ?>">
+					<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+				
 			<?php endforeach; ?>
 		</ul>
 	</div>
@@ -21,7 +22,7 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-4 col-xs-12">
 					<a href="#" class="logo">
-						<img alt="Logo" src="<?= PUBLIC_URL; ?> /images/logo.png" />
+						<img alt="Logo" src="<?= PUBLIC_URL; ?>/images/logo.png" />
 					</a>
 				</div>
 			</div>
@@ -33,12 +34,12 @@
 				<span>MENU</span>
 			</div>
 			<ul class="hidden-sm hidden-xs">
-				<?php foreach ($categories as $categorie) : ?>
-
-				<li><a href="<?= $categorie->getROUTECATEGORIE(); ?>">
+				<?php foreach($categories as $categorie) : ?>
+			
+				<li <?php if($categorie->getLIBELLECATEGORIE() == $current) : echo "class='current'"; endif; ?>> <a href="<?= PUBLIC_URL.'/'.$categorie->getROUTECATEGORIE(); ?>">
 					<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
-
-				<?php endforeach; ?>
+				
+			<?php endforeach; ?>
 			</ul>
 			<div class="search-icon">
 				<div class="search-icon-inner">

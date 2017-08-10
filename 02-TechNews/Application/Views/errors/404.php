@@ -1,13 +1,11 @@
 <?php
-
-# On récupère les cparametres de la Vue
-$params = $this->getParams();
-
+    # On récupère les paramètres de la Vue
+    $params = $this->getParams();
 ?>
 
 <div class="page-404">
-  <h1>404</h1>
-  <p>Erreur, <?= $params['erreur']; ?></p>
-  <p><img src="<?= PUBLIC_URL ;?> /images/404.gif" alt=""></p>
-  <a href="<?= PUBLIC_URL ;?>" class="my-btn btn-go-home">Retourner vers l'ACCUEIL</a>
+	<p><?= $params['erreur']; ?><br>
+	<img src="http://www.blog-astuces.com/wp-content/uploads/2013/03/erreur404.jpg" alt="">
+	</p>
+	<a href="<?= PUBLIC_URL; ?>" class="my-btn btn-go-home">RETOURNER VERS L'ACCUEIL</a>
 </div>
